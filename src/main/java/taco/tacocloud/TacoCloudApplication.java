@@ -17,7 +17,7 @@ public class TacoCloudApplication {
     @Bean
     public CommandLineRunner dataLoader(IngredientRepository repo) {
         return args -> {
-            repo.deleteAll(); // TODO: Quick hack to avoid tests from stepping on each other with constraint violations
+           // repo.deleteAll(); // TODO: Quick hack to avoid tests from stepping on each other with constraint violations
             repo.save(new Ingredient("FLTO", "Flour Tortilla", Type.WRAP));
             repo.save(new Ingredient("COTO", "Corn Tortilla", Type.WRAP));
             repo.save(new Ingredient("GRBF", "Ground Beef", Type.PROTEIN));
@@ -30,7 +30,7 @@ public class TacoCloudApplication {
             repo.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
         };
     }
-
+/*
     @Bean
     public ApplicationRunner dataLoader1(IngredientRepository repo){
         return args -> {
@@ -46,5 +46,5 @@ public class TacoCloudApplication {
             repo.save(new Ingredient("SLSA", "Salsa", Type.SAUCE));
             repo.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
         };
-    }
+    }*/
 }
