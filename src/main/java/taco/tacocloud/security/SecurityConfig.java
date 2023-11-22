@@ -2,6 +2,7 @@ package taco.tacocloud.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -41,17 +42,22 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http, MvcRequestMatcher.Builder mvc) throws Exception {
 
         HttpSecurity httpSecurity = http
+
+
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(antMatcher("/design")).hasRole("USER")
                         .requestMatchers(antMatcher("/orders")).hasRole("USER")
-
+                        .requestMatchers(antMatcher("/login")).permitAll()
                         .requestMatchers(mvc.pattern("/**")).permitAll()
 
                 )
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login").defaultSuccessUrl("/design",true)
                         .permitAll()
-                );
+                )
+
+                ;
+
 
         return httpSecurity.build();
     }
