@@ -19,11 +19,11 @@
 <!-- tag::thAction[] -->
 <form method="POST" th:action="@{/login}" id="loginForm">
   <!-- end::thAction[] -->
-  <label for="username">Username: </label>
+  <label th:for="username">Username: </label>
   <input type="text" name="username" id="username" /><br/>
 
-  <label for="password">Password: </label>
-  <input type="password" name="password" id="password" /><br/>
+  <label th:for="password">Password: </label>
+  <input type="password" name="password"  id="password" /><br/>
 
   <input type="submit" value="Login"/>
 </form>
