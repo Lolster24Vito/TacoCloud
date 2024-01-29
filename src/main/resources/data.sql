@@ -22,3 +22,6 @@ insert into Ingredient (id, name, type)
 values ('SLSA', 'Salsa', 'SAUCE');
 insert into Ingredient (id, name, type)
 values ('SRCR', 'Sour Cream', 'SAUCE');
+
+--insert into TacoUser (id,city,fullname,password,PHONE_NUMBER , STATE  ,STREET ,USERNAME, ZIP)
+--values (1 ,'admin','admin',	'$2a$10$oBEqTTScb6BEQbvg.RG9nu1x8g3n3Za.72p2uFhJDYfvB01cVTnbe','0998761220','admin','admin','admin','123456');

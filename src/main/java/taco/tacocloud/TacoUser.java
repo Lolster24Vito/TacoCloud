@@ -14,8 +14,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
-@Entity(name = "TacoUser")
 @Data
+@Entity(name = "TacoUser")
 @NoArgsConstructor(access = AccessLevel.PUBLIC,force = true)
 @RequiredArgsConstructor
 public class TacoUser implements UserDetails {

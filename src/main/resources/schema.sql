@@ -25,17 +25,22 @@ create table if not exists Ingredient (
     type varchar(10) not null
     );
 
-/* book version which throws error due to Ingredient not having a primary key
-create table if not exists Ingredient (
-    id varchar(4) not null,
-    name varchar(25) not null,
-    type varchar(10) not null
-    );
-*/
 create table if not exists Ingredient_Ref (
     ingredient varchar(4) not null,
     taco bigint not null,
     taco_key bigint not null
+    );
+create table if not exists TacoUser (
+                                        id identity,
+                                        username varchar(50) not null,
+    password varchar(255) not null,
+    fullname varchar(50) not null,
+    street varchar(50) not null,
+    city varchar(50) not null,
+    state varchar(50) not null,
+    zip varchar(20) not null,
+    phone_number varchar(15) not null,
+    primary key (id)
     );
 
 

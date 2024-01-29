@@ -23,7 +23,8 @@ public class TacoOrder implements Serializable {
     private Date placedAt;
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
-
+    @ManyToOne
+    private TacoUser user;
     @NotBlank(message="Street is required")
     private String deliveryStreet;
 
